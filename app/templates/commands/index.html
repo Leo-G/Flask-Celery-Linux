@@ -1,0 +1,21 @@
+<div ng-if="isAuthenticated()" style="height:100%">
+  <div class="index-button">
+        
+        <input placeholder="Search" type="text" ng-model="gridOptions.quickFilterText"/>
+    
+      <div>
+        <a ui-sref="commands.new"><button class="button-primary">New</button></a>
+       
+        <span ng-repeat="selectedRow in gridOptions.selectedRows">
+          <a ng-click="updateCommand(selectedRow.id)"><button class="button-primary" id="editButton" >Status</button></a> 
+     
+          <button ng-click="deleteCommand(selectedRow.id)" class="button-primary" id="deleteButton"> Delete </button>
+        </span>       
+       </div> 
+    </div>
+   
+    <div ag-grid="gridOptions" class="ag-fresh" ></div>
+
+
+
+</div>

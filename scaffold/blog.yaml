@@ -1,18 +1,11 @@
-posts:
- - tittle:string
- - body:text
- - author:string
- - creation_date:date
- - published:boolean
-comments:
- - author:string
- - body:text
- - author_url:url
- - created_on:date
- - approved:boolean
-authors:
+command:
  - name:string
- - profile:text
- - url:url
+ - task_id:text
+ - status:string
+ - result:text
+
+
+
+
  
  

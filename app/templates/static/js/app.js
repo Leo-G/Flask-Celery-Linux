@@ -153,7 +153,37 @@ $stateProvider.state('login', {
     // End Routes for users
 
 
+   
+   
    // States
+  // Routes for commands
+   .state('commands', {
+        abstract: true, //An abstract state cannot be loaded, but it still needs a ui-view for its children to populate.
+                         // https://github.com/angular-ui/ui-router/wiki/Nested-States-and-Nested-Views
+        url: '/commands',
+        title: 'Commands',
+        template: '<ui-view/>'
+   })
+  .state('commands.list', {
+    url: '/commands/list',
+    templateUrl: 'commands/index.html',
+    controller: 'CommandListController',
+
+
+  }).state('commands.new', {
+    url: '/commands/new',
+    templateUrl: '/commands/add.html',
+    controller: 'CommandCreateController',
+
+    }).state('commands.edit', {
+    url: '/commands/:id/edit',
+    templateUrl: 'commands/update.html',
+    controller: 'CommandEditController',
+
+        })
+
+        // End Routes for commands
+  
 
   ;
 

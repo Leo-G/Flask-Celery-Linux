@@ -136,7 +136,7 @@ class SignUp(Resource):
             schema.validate(raw_dict)
             request_dict = raw_dict['data']['attributes']
             role = None
-            active = "false"
+            active = 0
             user = Users(request_dict['email'], generate_password_hash(request_dict['password']), request_dict['name'], active,
                          role)
             user.add(user)

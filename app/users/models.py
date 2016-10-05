@@ -13,8 +13,8 @@ class Users(db.Model, CRUD_MixIn):
     creation_time = db.Column(
         db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
     modification_time = db.Column(
-        db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
-    role = db.Column(db.String(), db.ForeignKey('roles.name'))
+        db.TIMESTAMP)
+    role = db.Column(db.String(250), db.ForeignKey('roles.name'))
     # many users to one  role
     role_relation = db.relationship('Roles', backref="users")
 

@@ -26,7 +26,9 @@
     <script src="static/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="static/js/app.js"></script>
     <script type="text/javascript" src="static/js/login.js"></script>
-                     <!-- Controllers -->
+                       <!-- Controllers -->
+    <script type="text/javascript" src="commands/controllers.js"></script>
+    <script type="text/javascript" src="commands/controllers.js"></script>
         <script type="text/javascript" src="roles/controllers.js"></script>
     <script type="text/javascript" src="users/controllers.js"></script>
    <script type="text/javascript" src="static/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -65,7 +67,17 @@
                        </ul>
                     </li>
 
-                                          <!-- menu -->
+                                              <!-- menu -->
+
+ <li ng-init="commands_click='false'">
+     <a ui-sref="commands" id="commands_menu" ng-click="commands_click=!commands_click">
+     Commands</a>
+                        <ul  ng-hide="commands_click">
+                            <li><a ui-sref="commands.list" id="commands_list" ui-sref-active="current">List</a></li>
+                            <li><a ui-sref="commands.new" id="commands_new" ui-sref-active="current">New</a></li>
+                       </ul>
+                    </li>
+
                  </div>
             </nav>
 
