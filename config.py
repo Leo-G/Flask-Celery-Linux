@@ -11,7 +11,7 @@ mysql_db_name = 'flask_celery_linux'
 mysql_db_hostname = 'localhost'
 
 DEBUG = True
-PORT = 8080
+PORT = 5000
 HOST = "0.0.0.0"
 SQLALCHEMY_ECHO = False
 SECRET_KEY = "SOME SECRET"
@@ -39,7 +39,4 @@ PASSWORD_RESET_EMAIL ="""
       <a href="/forgotpassword/{token}> Click here </a>"""
 
 CELERY_BROKER_URL = 'amqp://guest@localhost//'
-CELERY_RESULT_BACKEND = "db+mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_ADDR}/{DB_NAME}".format(DB_USER=mysql_db_username,
-                                                                                        DB_PASS=mysql_db_password,
-                                                                                        DB_ADDR=mysql_db_hostname,
-                                                                                        DB_NAME=mysql_db_name)
+CELERY_RESULT_BACKEND = "db+{}".format(SQLALCHEMY_DATABASE_URI)
