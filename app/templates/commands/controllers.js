@@ -15,7 +15,7 @@ angular.module('myApp.services').factory('Command', function($resource) {
 angular.module('myApp.controllers').controller('CommandListController', function($scope, $state,  Command, $auth, toaster) {
  //Table header definitions  
         var columnDefs = [ {headerName: "Sr No", cellRenderer: function(params) {return params.node.id + 1;} },
-                             {headerName: "name", field: "name", width: 300 },{headerName: "task_id", field: "task_id", width: 300 },{headerName: "status", field: "status", width: 300 },{headerName: "result", field: "result", width: 300 },
+                             {headerName: "name", field: "name", width: 200 },{headerName: "task_id", field: "task_id", width: 300 },{headerName: "status", field: "status", width: 100 },{headerName: "result", field: "result", width: 500 },
                             
                             
                             ];
