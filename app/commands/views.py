@@ -7,6 +7,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from marshmallow import ValidationError
 import subprocess
 from app import celery
+from billiard.exceptions import Terminated
 
 commands = Blueprint('commands', __name__)
 # http://marshmallow.readthedocs.org/en/latest/quickstart.html#declaring-schemas
@@ -14,7 +15,7 @@ commands = Blueprint('commands', __name__)
 schema = CommandsSchema(strict=True)
 api = Api(commands)
 
-@celery.task
+@celery.task(throws=(Terminated,))
 def run_command(command):
     cmd = subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     stdout,error = cmd.communicate()
@@ -111,6 +112,9 @@ class GetUpdateDeleteCommand(Resource):
     def delete(self, id):
         command = Commands.query.get_or_404(id)
         try:
+            
+            task_id = command.task_id
+            task_status = run_command.AsyncResult(task_id).revoke(terminate=True)
             delete = command.delete(command)
             response = make_response()
             response.status_code = 204
