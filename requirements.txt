@@ -1,37 +1,34 @@
-alembic (0.8.8)
-amqp (1.4.9)
-aniso8601 (1.1.0)
-anyjson (0.3.3)
-autopep8 (1.2.1)
-billiard (3.3.0.23)
-blinker (1.4)
-celery (3.1.24)
-Flask (0.10.1)
-Flask-Mail (0.9.1)
-Flask-Migrate (1.4.0)
-Flask-RESTful (0.3.4)
-Flask-Script (2.0.5)
-Flask-SQLAlchemy (2.0)
-inflect (0.2.5)
-itsdangerous (0.24)
-Jinja2 (2.8)
-kombu (3.0.36)
-Mako (1.0.4)
-MarkupSafe (0.23)
-marshmallow (2.3.0)
-marshmallow-jsonapi (0.3.0)
-pep8 (1.7.0)
-pip (8.1.2)
-pycrypto (2.6.1)
-PyJWT (1.4.0)
-PyMySQL (0.6.6)
-python-dateutil (2.5.3)
-python-editor (1.0.1)
-pytz (2016.7)
-PyYAML (3.11)
-setuptools (28.2.0)
-six (1.10.0)
-SQLAlchemy (1.0.15)
-uWSGI (2.0.11.2)
-Werkzeug (0.11.11)
-wheel (0.30.0a0)
+alembic==0.8.8
+amqp==1.4.9
+aniso8601==1.1.0
+anyjson==0.3.3
+autopep8==1.2.1
+billiard==3.3.0.23
+blinker==1.4
+celery==3.1.24
+Flask==0.10.1
+Flask-Mail==0.9.1
+Flask-Migrate==1.4.0
+Flask-RESTful==0.3.4
+Flask-Script==2.0.5
+Flask-SQLAlchemy==2.0
+inflect==0.2.5
+itsdangerous==0.24
+Jinja2==2.8
+kombu==3.0.36
+Mako==1.0.4
+MarkupSafe==0.23
+marshmallow==2.3.0
+marshmallow-jsonapi==0.3.0
+pep8==1.7.0
+pycrypto==2.6.1
+PyJWT==1.4.0
+PyMySQL==0.6.6
+python-dateutil==2.5.3
+python-editor==1.0.1
+pytz==2016.7
+PyYAML==3.11
+six==1.10.0
+SQLAlchemy==1.0.15
+uWSGI==2.0.11.2
+Werkzeug==0.11.11
